@@ -66,10 +66,10 @@ def predict():
             #print(f"Identified City:{answer}")
             try:
                 whether = requests.get(f"https://wttr.in/{answer}?format=3").text
-                return jsonify({"Whether of City ": answer, " Whether ": whether})
+                return jsonify({"Whether of City ": answer, " V1 Whether ": whether})
                 #print(f"Whether of {answer}: {whether}")
             except Exception as e:
-                return jsonify({"Whether of City ": answer, " Error ": e})
+                return jsonify({"Whether of City ": answer, " V1 Error ": e})
                 #print(f"Could not retrieve whether for {answer}. Error: {e}")
         else:
             return jsonify({"Please enter a valid city name. ": "" ," and Error ": ""})
